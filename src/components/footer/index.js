@@ -100,7 +100,7 @@ export const Footer = () => {
             <Text color="#fff" display="flex" alignItems="center" gap={2} mt={2}>
               Feito por{" "}
               <Link
-                href="https://www.linkedin.com/company/criatvih/"
+                href="https://www.linkedin.com/in/emanuel-medeiros/"
                 target="_blank"
               >
                 MMV Soluções Web

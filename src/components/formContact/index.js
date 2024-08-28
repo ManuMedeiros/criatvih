@@ -32,7 +32,7 @@ export const FormaContact = () => {
     const encodedSubject = encodeURIComponent(formulario.assunto);
     const encodedBody = encodeURIComponent(formulario.mensagem);
 
-    window.location.href = `mailto:manu.medeiros94@gmail.com?subject=${encodedSubject}&body=${encodedBody}`;
+    window.location.href = `mailto:criatvi21@gmail.com?subject=${encodedSubject}&body=${encodedBody}`;
   };
 
   const enviarMensagemWhatsApp = () => {
