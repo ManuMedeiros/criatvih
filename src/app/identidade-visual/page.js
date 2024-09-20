@@ -10,6 +10,7 @@ import {
   Image,
   Stack,
   Text,
+  UnorderedList,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { TitlePage } from "@/components/titlePage";
@@ -36,33 +37,52 @@ export default function VisualIdentity() {
     <Box minHeight="100vh">
       <TitlePage title="Identidade Visual" />
 
-      <Stack p="50px" gap={10}>
-        <Flex gap={10} alignItems="center" justifyContent="center">
+      <Stack p={{ base: "20px", md: "50px" }} gap={10}>
+        <Flex
+          gap={5}
+          alignItems="center"
+          justifyContent="center"
+          direction={{ base: "column", md: "row" }}
+        >
           <Box>
             <Image
               src="./imgsPages/identidade-top.png"
-              width={350}
-              height={250}
+              width={{ base: "200px", md: "350px" }}
+              height={{ base: "200px", md: "250px" }}
+              objectFit="contain"
             />
           </Box>
-          <Box width="60%">
-            <Text fontSize={18} fontWeight="bold">
+          <Box width={{ base: "100%", md: "60%" }}>
+            <Text fontSize={{ base: "14px", md: "18px" }} fontWeight="bold">
               Imagine ter o poder de transformar a sua marca em uma verdadeira
               obra de arte visual. Com o serviço de identidade visual do
               Criatvih, você não apenas conquistará uma marca única, mas também
               conquistará uma marca deslumbrante, que atraia clientes e deixe
               uma marca duradoura no mercado.
             </Text>
-            <Text fontSize={18} fontWeight="bold" marginTop={10}>
+            <Text
+              fontSize={{ base: "14px", md: "18px"  }}
+              fontWeight="bold"
+              marginTop={10}
+            >
               Eleve sua marca a um nível superior. Feche um contrato comigo e
               descubra o poder da verdadeira identidade visual.
             </Text>
           </Box>
         </Flex>
-        <Flex gap={10} alignItems="center" justifyContent="center">
-          <Image src="./imgsPages/iconPages.png" w="90px" />
-          <Box width="70%">
-            <Text fontSize={18} fontWeight="bold">
+        <Flex
+          gap={10}
+          alignItems="center"
+          justifyContent="center"
+          flexDirection={{ base: "column", md: "row" }}
+        >
+          <Image
+            src="./imgsPages/iconPages.png"
+            w={{ base: "70px", md: "100px" }}
+            objectFit="contain"
+          />
+          <Box width={{ base: "100%", md: "70%" }}>
+            <Text fontSize={{ base: 16, md: 18 }} fontWeight="bold">
               Você já refletiu sobre o fato de que a primeira impressão que sua
               empresa causa hoje em dia? No Criatvih, compreendo profundamente o
               impacto da identidade visual como um dos alicerces do sucesso
@@ -74,11 +94,12 @@ export default function VisualIdentity() {
         </Flex>
       </Stack>
 
-      <Stack margin="0 30px">
+      <Stack margin="0 20px">
         <>
           <Accordion
             display="flex"
             justifyContent="space-between"
+            flexDirection={{ base: "column", md: "row" }}
             width="100%"
             alignItems="flex-start"
             gap={10}
@@ -88,15 +109,15 @@ export default function VisualIdentity() {
               <AccordionItem
                 backgroundColor="#CD90FE"
                 padding={4}
-                borderRadius={20}
-                width="20%"
+                borderRadius={50}
+                width={{ base: "100%", md: "30%" }}
               >
                 {({ isExpanded }) => (
                   <>
                     <h2>
                       <AccordionButton
                         justifyContent="space-between"
-                        borderBottom="1px solid #000"
+                       
                       >
                         <Box
                           as="span"
@@ -129,46 +150,53 @@ export default function VisualIdentity() {
         </>
       </Stack>
 
-      <Stack backgroundColor="#000" color="#fff" marginTop={10} padding={10}>
-        <Text fontSize={32} textAlign="center" fontWeight="bold" p="20px">
+      <Stack
+        backgroundColor="#212123"
+        color="#fff"
+        marginTop={10}
+        padding={{ base: 5, md: 10 }}
+      >
+        <Text
+          fontSize={{ base: 24, md: 32 }}
+          textAlign="center"
+          fontWeight="bold"
+          p={{ base: 10, md: 20 }}
+        >
           Serviços que fazem parte de uma identidade visual
         </Text>
         <Flex
-          alignItems="center"
-          justifyContent="space-evenly"
-          width="80%"
-          margin="0 auto"
+         gap={2} alignItems="center" justifyContent="center" direction={{ base: "column", md: "row" }}
         >
-          <ul style={{ fontSize: 22 }}>
+          <UnorderedList  fontSize={20} width={"100%"} marginLeft={38} >
             <li>Logo Principal</li>
             <li>Logo Segundario</li>
             <li>Submarca</li>
             <li>Manual da Marca</li>
             <li>Pattern</li>
-          </ul>
-          <ul style={{ fontSize: 22 }}>
+          </UnorderedList>
+          <UnorderedList fontSize={20} width={"100%"} marginLeft={38} >
             <li>Cartão de Visita</li>
             <li>Cartão Fidelidade</li>
             <li>Cartão digital</li>
             <li>Destaques para o Instagram</li>
-          </ul>
+          </UnorderedList>
         </Flex>
       </Stack>
 
-      <Stack textAlign="center" p="30px" background="#c9c9c9">
-        <Text fontSize={32} fontWeight={600}>
+      <Stack textAlign="center" p="8px" background="#c9c9c9">
+        <Text fontSize={{ base: 22, md: 32 }} fontWeight={600}>
           PRAZOS
         </Text>
-        <Text fontSize={28}>
+        <Text fontSize={{ base: 18, md: 28 }}>
           Aqui você encontra Qualidade e<br />
           Velocidade na mesma proporção!
         </Text>
-        <Text fontSize={28} fontWeight={600} marginTop={5}>
+        <Text fontSize={{ base: 18, md: 28 }} fontWeight={600} marginTop={4}>
           Entrega Final - Até 10 dias úteis
         </Text>
       </Stack>
 
-      <Stack backgroundColor="#000" padding="30px 0" position="relative">
+      <Stack backgroundColor="#212123" padding={{ base: "20px", md: "30px 0" }} >
         <Phases data={phases} img="./imgsPages/identidade-bottom.png" />
       </Stack>
       <Stack p={10}>

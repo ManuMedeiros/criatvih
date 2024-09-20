@@ -24,8 +24,8 @@ export default function Questions() {
     <Box minHeight="100vh">
       <TitlePage title="Dúvidas Frequentes" />
       <Stack p="50px">
-        <Flex gap={10} justifyContent="center">
-          <Box width="30%">
+        <Flex gap={10}  flexDirection={{ base: "column", md: "row"}} justifyContent="center">
+          <Box width={{ base:"100%", md: "30%"}} >
             <Accordion
               display="flex"
               flexDirection="column"
@@ -142,7 +142,7 @@ export default function Questions() {
               </AccordionItem>
             </Accordion>
           </Box>
-          <Box width="30%">
+          <Box width={{ base:"100%", md: "30%"}}>
             <Accordion
               display="flex"
               flexDirection="column"

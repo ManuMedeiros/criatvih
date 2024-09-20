@@ -3,20 +3,13 @@ import React from "react";
 
 export const Phases = ({ data, img, widthImg, mtImag, mrImg }) => {
   return (
-    <Box>
-      <Box
-        w="15px"
-        height="50rem"
-        position="absolute"
-        left="50%"
-        top="8%"
-        zIndex={1}
-        backgroundColor="#CD90FE"
-      />
+    <Box display={{ base: "flex", md: "block" }} flexDirection="column" gap={10}>
+     
       {data.map((text, index) => (
         <Flex
           key={index}
-          width="100%"
+          width={{ base: "90%", md: "100%" }} 
+          margin={{ base: "0 auto", md: "0" }}
           gap="50px"
           direction={index % 2 !== 0 ? "row-reverse" : "row"}
           justifyContent="center"
@@ -36,6 +29,7 @@ export const Phases = ({ data, img, widthImg, mtImag, mrImg }) => {
             <Text>{text.description}</Text>
           </Box>
           <Text
+            display={{ base: "none", md: "block" }}
             width="100px"
             height="100px"
             textAlign="center"
@@ -54,7 +48,7 @@ export const Phases = ({ data, img, widthImg, mtImag, mrImg }) => {
         </Flex>
       ))}
 
-      <Flex justifyContent="flex-end" marginTop={mtImag ? mtImag : "-30rem"} marginRight={mrImg ? mrImg : "10rem"}>
+      <Flex display={{ base: "none", md: "flex" }} justifyContent="flex-end" marginTop={mtImag ? mtImag : "-30rem"} marginRight={mrImg ? mrImg : "10rem"}>
         <Image src={img} w={widthImg ? widthImg : 620}/>
       </Flex>
     </Box>
