@@ -9,6 +9,7 @@ import {
   Image,
   Stack,
   Text,
+  UnorderedList,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { TitlePage } from "@/components/titlePage";
@@ -36,25 +37,27 @@ export default function GraficArts() {
     <Box minHeight="100vh">
       <TitlePage title="Artes gráficas e artes para impressão" />
 
-      <Stack p="50px" gap={10}>
+      <Stack p={{ base: "20px", md: "50px" }} gap={10}>
         <Flex
-          gap={10}
+          gap={5}
           alignItems="center"
           justifyContent="center"
-          direction="row-reverse"
+          direction={{ base: "column", md: "row" }}
         >
           <Box>
-            <Image src="./imgsPages/artes-top.png" width={350} height={250} />
+            <Image src="./imgsPages/artes-top.png"
+             width={{ base: 250, md: 350 }}
+             height={{ base: 250, md: 250 }} />
           </Box>
-          <Box width="60%">
-            <Text fontSize={18} fontWeight="bold">
+          <Box width={{ base: "100%", md: "60%" }}>
+            <Text fontSize={{ base: 16, md: 18 }} fontWeight="bold">
               Transforme sua visão em realidade com o poder do design e das
               artes gráficas e impressas da Criatvih. Com os meus serviços
               especializados você não apenas terá trabalhos excepcionais, mas
               também elevará sua expressão visual a um novo patamar, cativando
               seu público e destacando você na concorrência.
             </Text>
-            <Text fontSize={18} fontWeight="bold" marginTop={10}>
+            <Text fontSize={{ base: 16, md: 18 }} fontWeight="bold" marginTop={5}>
               Entre em contato comigo para alcançar uma excelência incomparável
               em suas criações gráficas e impressões. Ao firmar parceria comigo,
               você terá o poder de produzir peças visuais surpreendentes e
@@ -62,10 +65,11 @@ export default function GraficArts() {
             </Text>
           </Box>
         </Flex>
-        <Flex gap={10} alignItems="center" justifyContent="center">
-          <Image src="./imgsPages/iconPages.png" w="90px" />
-          <Box width="70%">
-            <Text fontSize={18} fontWeight="bold">
+        <Flex gap={10} alignItems="center" justifyContent="center" direction={{ base: "column", md: "row" }}>
+          <Image src="./imgsPages/iconPages.png" 
+           w={{ base: "70px", md: "100px" }}/>
+          <Box width={{ base: "100%", md: "70%" }}>
+            <Text fontSize={{ base: 16, md: 18 }} fontWeight="bold">
               Já refletiu sobre o poder transformador das artes gráficas e
               impressas para sua empresa? No Criatvih, compreendo o impacto
               essencial dessas expressões visuais no mundo dos negócios atual.
@@ -77,47 +81,48 @@ export default function GraficArts() {
         </Flex>
       </Stack>
 
-      <Stack margin="0 30px">
+      <Stack margin="0 20px">
         <>
           <Accordion
             display="flex"
             justifyContent="space-between"
             width="100%"
             alignItems="flex-start"
-            gap={10}
+            gap={4}
             allowMultiple
+            flexDirection={{ base:"column", md: "row" }}
           >
             {text.map((p, index) => (
               <AccordionItem
                 backgroundColor="#CD90FE"
                 padding={4}
-                borderRadius={20}
-                width="20%"
+                borderRadius={30}
+                width={{ base: "100%", md: "20%" }}
+                key={index}
               >
                 {({ isExpanded }) => (
                   <>
                     <h2>
                       <AccordionButton
                         justifyContent="space-between"
-                        borderBottom="1px solid #000"
                       >
                         <Box
                           as="span"
-                          fontSize={18}
+                          fontSize={{ base: 16, md: 18 }}
                           fontWeight={700}
                           textAlign="center"
                         >
                           {p.title}
                         </Box>
                         {isExpanded ? (
-                          <FiMinus size={30} />
+                          <FiMinus size={20} />
                         ) : (
-                          <IoIosAdd size={30} />
+                          <IoIosAdd size={20} />
                         )}
                       </AccordionButton>
                     </h2>
                     <AccordionPanel
-                      fontSize={16}
+                      fontSize={{ base: 14, md: 16 }}
                       fontWeight={600}
                       textAlign="center"
                       pb={4}
@@ -132,62 +137,74 @@ export default function GraficArts() {
         </>
       </Stack>
 
-      <Stack backgroundColor="#000" color="#fff" marginTop={10} padding={10}>
-        <Text fontSize={32} textAlign="center" fontWeight="bold" p="30px">
+      <Stack
+        backgroundColor="#212123"
+        color="#fff"
+        marginTop={10}
+        padding={{ base: 5, md: 10 }}
+      >
+        <Text
+          fontSize={{ base: 24, md: 32 }}
+          textAlign="center"
+          fontWeight="bold"
+          p={{ base: 10, md: 20 }}
+        >
           Serviços que fazem parte das artes gráficas e impressas
         </Text>
-        <Flex
-          alignItems="flex-start"
-          justifyContent="space-evenly"
-          width="80%"
-          margin="0 auto"
+         <Flex
+         alignItems="center"
+         justifyContent="space-evenly"
+         width="100%"
+         margin="0 auto"
+         direction={{ base: "column", md: "row" }}
         >
-          <ul style={{ fontSize: 22 }}>
+        
+        <UnorderedList fontSize={20} width={"100%"} marginLeft={38}>
             <li>Packs</li>
             <li>Receituário</li>
             <li>Certificado</li>
             <li>Cardápio</li>
             <li>Convites ou Cartões</li>
-          </ul>
-          <ul style={{ fontSize: 22 }}>
+          </UnorderedList>
+          <UnorderedList fontSize={20} width={"100%"} marginLeft={38}>
             <li>Flyers ou Folder</li>
             <li>Banner</li>
             <li>Catálogo</li>
             <li>Agenda</li>
             <li>Crachá</li>
-          </ul>
-          <ul style={{ fontSize: 22, width: "35%" }}>
+          </UnorderedList>
+          <UnorderedList fontSize={20} width={"100%"} marginLeft={42}>
             <li>Assinatura de E-mail</li>
             <li>
               Design de embalagens de produtos
               <br /> considerando os aspectos práticos e estéticos
             </li>
-          </ul>
+          </UnorderedList>
         </Flex>
       </Stack>
 
-      <Stack textAlign="center" p="30px" background="#c9c9c9">
-        <Text fontSize={32} fontWeight={600}>
+      <Stack textAlign="center" p="8px" background="#c9c9c9">
+        <Text fontSize={{ base: 22, md: 32 }} fontWeight={600}>
           PRAZOS
         </Text>
-        <Text fontSize={28}>
+        <Text fontSize={{ base: 18, md: 28 }}>
           Aqui você encontra Qualidade e<br />
           Velocidade na mesma proporção!
         </Text>
-        <Text fontSize={28} fontWeight={600} marginTop={5}>
+        <Text fontSize={{ base: 18, md: 28 }} fontWeight={600} marginTop={4}>
           Entrega Final - De 5 a 15 dias úteis dependendo do Serviço escolhido
           <br /> O prazo pode aumentar ou diminuir de acordo com as demandas do
           projeto e o envio das informações.
         </Text>
       </Stack>
 
-      <Stack backgroundColor="#000" padding="30px 0" position="relative">
+      <Stack backgroundColor="#212123" padding={{ base: "20px", md: "30px 0" }}>
         <Phases
           data={phases}
           img="./imgsPages/artes-bottom.png"
-          widthImg={580}
+          widthImg={400}
           mrImg="5rem"
-          mtImag="-25rem"
+          mtImag="-15rem"
         />
       </Stack>
       <Stack p={10}>

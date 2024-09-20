@@ -9,6 +9,7 @@ import {
   Image,
   Stack,
   Text,
+  UnorderedList,
 } from "@chakra-ui/react";
 import React from "react";
 import { TitlePage } from "../../components/titlePage";
@@ -29,24 +30,29 @@ export default function Design() {
     <Box minHeight="100vh">
       <TitlePage title="Ui / Ux" />
 
-      <Stack p="50px" gap={10}>
+      <Stack p={{ base: "20px", md: "50px" }} gap={10}>
         <Flex
-          gap={10}
-          alignItems="center"
-          justifyContent="center"
-          direction="row-reverse"
+            gap={5}
+            alignItems="center"
+            justifyContent="center"
+            direction={{ base: "column", md: "row" }}
         >
           <Box>
-            <Image src="./imgsPages/ux-top.png" width={350} height={250} />
+            <Image src="./imgsPages/ux-top.png" 
+             width={{ base: 250, md: 300 }}
+              height={{ base: 250, md: 250 }} />
           </Box>
-          <Box width="60%">
-            <Text fontSize={18} fontWeight="bold">
+          <Box width={{ base: "100%", md: "60%" }}>
+            <Text fontSize={{ base: 16, md: 18 }} fontWeight="bold">
               Transforme a experiência do usuário em sua plataforma com a
               excelência em UI/UX da Criatvih. Ofereça interfaces únicas e
               experiências envolventes que vão além das expectativas, criando um
               impacto marcante no mercado.
             </Text>
-            <Text fontSize={18} fontWeight="bold" marginTop={10}>
+            <Text  fontSize={{ base: 16, md: 18 }}
+              fontWeight="bold"
+              marginTop={10}
+              >
               Invista em nossa parceria para aprimorar a usabilidade, criar
               conexões emocionais e destacar sua marca de forma inesquecível.
               Descubra o poder da UI/UX da Criatvih e transforme a interação do
@@ -54,10 +60,15 @@ export default function Design() {
             </Text>
           </Box>
         </Flex>
-        <Flex gap={10} alignItems="center" justifyContent="center">
-          <Image src="./imgsPages/iconPages.png" w="90px" />
-          <Box width="70%">
-            <Text fontSize={18} fontWeight="bold">
+        <Flex gap={10}
+          alignItems="center"
+          justifyContent="center"
+          flexDirection={{ base: "column", md: "row" }}
+          >
+          <Image src="./imgsPages/iconPages.png" 
+          w={{ base: "70px", md: "100px" }}/>
+          <Box width={{ base: "100%", md: "70%" }}>
+            <Text fontSize={{ base: 16, md: 18 }} fontWeight="bold">
               No Criatvih, compreendo profundamente o poder da experiência do
               usuário (UI/UX) como uma base sólida para o sucesso digital. E
               possuo conhecimento para criar uma experiência que não apenas
@@ -68,29 +79,30 @@ export default function Design() {
         </Flex>
       </Stack>
 
-      <Stack margin="0 30px">
+      <Stack margin="0 20px">
         <>
-          <Accordion
+        <Accordion
             display="flex"
             justifyContent="space-between"
+            flexDirection={{ base: "column", md: "row" }}
             width="100%"
             alignItems="flex-start"
             gap={10}
             allowMultiple
           >
-            {text.map((p, index) => (
+             {text.map((p, index) => (
               <AccordionItem
                 backgroundColor="#CD90FE"
                 padding={4}
                 borderRadius={20}
-                width="20%"
+                width={{ base: "100%", md: "20%" }}
               >
                 {({ isExpanded }) => (
                   <>
                     <h2>
                       <AccordionButton
                         justifyContent="space-between"
-                        borderBottom="1px solid #000"
+                        
                       >
                         <Box
                           as="span"
@@ -123,40 +135,49 @@ export default function Design() {
         </>
       </Stack>
 
-      <Stack backgroundColor="#000" color="#fff" marginTop={10} p={10}>
-        <Text fontSize={32} textAlign="center" fontWeight="bold" p="30px">
+      <Stack
+       backgroundColor="#212123"
+        color="#fff"
+        marginTop={10}
+        padding={{ base: 5, md: 10 }}>
+        <Text 
+        fontSize={{ base: 24, md: 32 }}
+          textAlign="center"
+          fontWeight="bold"
+          p="10 0">
           Serviços que fazem parte de ui / ux
         </Text>
         <Flex
-          alignItems="center"
-          justifyContent="center"
-          width="80%"
-          margin="0 auto"
+       alignItems="center"
+       justifyContent="space-evenly"
+       width="100%"
+       direction={{ base: "column", md: "row" }}
+       gap={4}
         >
-          <ul style={{ fontSize: 22 }}>
+          <UnorderedList fontSize={20} width={"100%"} marginLeft={{ base: 4, md: 415}}>
             <li>Design de websites e aplicativosLogo Principal</li>
             <li>Foco na usabilidade e na experiência do usuário</li>
             <li>Prototipagem e testes de usabilidade.</li>
-          </ul>
+            </UnorderedList>
         </Flex>
       </Stack>
 
-      <Stack textAlign="center" p="30px" background="#c9c9c9">
-        <Text fontSize={32} fontWeight={600}>
+      <Stack  textAlign="center" p="8px" background="#c9c9c9">
+        <Text fontSize={{ base: 22, md: 32 }} fontWeight={600}>
           PRAZOS
         </Text>
-        <Text fontSize={28}>
+        <Text fontSize={{base: 18, md: 28 }}>
           Aqui você encontra Qualidade e<br />
           Velocidade na mesma proporção!
         </Text>
-        <Text fontSize={28} fontWeight={600} marginTop={5}>
+        <Text fontSize={{ base: 22, md: 32 }} fontWeight={600} marginTop={4}>
           Entrega Final - De 10 a 30 dias úteis
           <br /> O prazo pode aumentar ou diminuir de acordo com as demandas do
           projeto e o<br /> envio das informações (Textos e Imagens).
         </Text>
       </Stack>
 
-      <Stack backgroundColor="#000" padding="30px 0" position="relative">
+      <Stack backgroundColor="#212123" padding="30px 0" position="relative">
         <Phases
           data={phases}
           img="./imgsPages/ux-bottom.png"

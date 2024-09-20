@@ -11,22 +11,22 @@ export default function Contact() {
   return (
     <Box>
       <TitlePage title="Contato" />
-      <Stack p="50px">
-        <Flex gap={10} justifyContent="center">
+      <Stack p={{ base: "20px", md: "50px"}}>
+        <Flex gap={{ base: 5, md: 10 }} justifyContent="center" flexWrap="wrap" >
           <Flex
             direction="column"
             justifyContent="center"
             alignItems="center"
             border="2px solid #CD90FE"
             borderRadius={20}
-            p={10}
-            w="250px"
+            p={6}
+            w={{ base: "150px", md: "250px"}}
           >
-            <FaWhatsapp size={60} />
-            <Text fontSize={20} fontWeight={700}>
+            <FaWhatsapp size={40} />
+            <Text fontSize={{ base: 16, md: 20 }} fontWeight={700} mt={2}>
               Whatsapp
             </Text>
-            <Text>(11) 941216687</Text>
+            <Text fontSize={{ base: 14, md: 16 }}>(11) 941216687</Text>
           </Flex>
           <Flex
             direction="column"
@@ -34,14 +34,14 @@ export default function Contact() {
             alignItems="center"
             border="2px solid #CD90FE"
             borderRadius={20}
-            p={10}
-            w="250px"
+            p={6}
+            w={{ base: "150px", md: "250px" }}
           >
-            <HiOutlineMail size={60}/>
-            <Text fontSize={20} fontWeight={700}>
+            <HiOutlineMail size={40}/>
+            <Text fontSize={{ base: 16, md: 20 }} fontWeight={700} mt={2}>
               E-mail
             </Text>
-            <Text>criatvih21@gmail.com</Text>
+            <Text fontSize={{ base: 14, md:16 }}>criatvih21@gmail.com</Text>
           </Flex>
           <Flex
             direction="column"
@@ -49,14 +49,14 @@ export default function Contact() {
             alignItems="center"
             border="2px solid #CD90FE"
             borderRadius={20}
-            p={10}
-            w="250px"
+            p={6}
+            w={{ base: "150px", md: "250px" }}
           >
-            <HiOutlineLocationMarker size={60}/>
-            <Text fontSize={20} fontWeight={700}>
+            <HiOutlineLocationMarker size={40}/>
+            <Text fontSize={{ base: 16, md: 20 }} fontWeight={700} mt={2}>
               Endereço
             </Text>
-            <Text>
+            <Text fontSize={{ base: 14, md: 16 }} textAlign="center">
               São Paulo - SP
               <br />
               Home Office
@@ -68,14 +68,14 @@ export default function Contact() {
             alignItems="center"
             border="2px solid #CD90FE"
             borderRadius={20}
-            p={10}
-            w="250px"
+            p={6}
+            w={{ base: "150px", md: "250px" }}
           >
-            <IoMdTime size={60}/>
-            <Text fontSize={20} fontWeight={700}>
+            <IoMdTime size={40}/>
+            <Text fontSize={{ base: 6, md: 20 }} fontWeight={700} mt={2}>
               Atendimento
             </Text>
-            <Text>
+            <Text fontSize={{ base: 14, md:16 }} textAlign="center">
               Seg. a Sex. <br />
               09:00 - 20:00
             </Text>
