@@ -23,22 +23,22 @@ export const SegundaParte = () => {
         top="0"
         left="0"
         w="100%"
-        h="80px"
+        h="50px"
         bgGradient="linear(to-t, rgba(0,0,0,0), rgba(0,0,0,0.85), #000000)"
         pointerEvents="none"
         zIndex={2}
       />
       <Box marginTop="90px">
-        <Flex gap={10} justifyContent="center" paddingBottom="140px">
+        <Flex gap={{base: "5rem", md: "11rem" }} justifyContent="center" paddingBottom="140px" flexDirection={{ base: "column", md: "row"}}>
           <Box
             border="1px solid #ebdcc4"
             borderRadius={24}
             p={10}
-            width="30%"
+            width={{base: "auto", md: "30%" }}
             paddingTop="40px"
             position="relative"
           >
-            <Box position="absolute" top="-34px" left="150px">
+            <Box position="absolute" top="-34px" left={{ base: "130px", md: "150px" }}>
               <IoIosCheckmarkCircleOutline color="#b61716" size={68} />
             </Box>
             <Text fontSize={23} color="#ebdcc4" fontWeight="bold" mb={4}>
@@ -62,11 +62,11 @@ export const SegundaParte = () => {
             border="1px solid #ebdcc4"
             borderRadius={24}
             p={10}
-            width="30%"
+            width={{base: "auto", md: "30%" }}
             paddingTop="40px"
             position="relative"
           >
-            <Box position="absolute" top="-34px" left="150px">
+            <Box position="absolute" top="-34px" left={{ base: "130px", md: "150px" }}>
               <IoIosCloseCircleOutline color="#b61716" size={68} />
             </Box>
 
@@ -89,7 +89,7 @@ export const SegundaParte = () => {
           </Box>
         </Flex>
       </Box>
-      <Box
+      {/* <Box
         position="absolute"
         bottom="0"
         left="0"
@@ -98,7 +98,7 @@ export const SegundaParte = () => {
         bgGradient="linear(to-b, rgba(0,0,0,0), rgba(0,0,0,0.85), #000000)"
         pointerEvents="none"
         zIndex={2}
-      />
+      /> */}
     </Box>
   );
 };

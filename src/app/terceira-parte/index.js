@@ -17,7 +17,7 @@ export const TerceiraParte = () => {
       px="10"
       position="relative"
     >
-      <Box
+      {/* <Box
         position="absolute"
         top="0"
         left="0"
@@ -26,8 +26,8 @@ export const TerceiraParte = () => {
         bgGradient="linear(to-t, rgba(0,0,0,0), rgba(0,0,0,0.85), #000000)"
         pointerEvents="none"
         zIndex={2}
-      />
-      <Flex direction="column" gap={6} margin="8rem 0 7rem 0">
+      /> */}
+      <Flex direction="column" gap={6} margin="1rem 0 7rem 0">
         <Box>
           <Text color="#fff" fontSize={24} fontWeight={600}>
             Sem estratégia, sua marca continua sendo só mais uma.
@@ -111,7 +111,7 @@ export const TerceiraParte = () => {
           <ButtomStart text="Eu quero"/>
         </Box>
       </Flex>
-      <Box
+      {/* <Box
         position="absolute"
         bottom="0"
         left="0"
@@ -120,7 +120,7 @@ export const TerceiraParte = () => {
         bgGradient="linear(to-b, rgba(0,0,0,0), rgba(0,0,0,0.85), #000000)"
         pointerEvents="none"
         zIndex={2}
-      />
+      /> */}
     </Box>
   );
 };

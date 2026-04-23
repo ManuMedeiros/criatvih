@@ -8,7 +8,7 @@ export const PrimeiraParte = () => {
   return (
     <Box
       w="100%"
-      h="100vh"
+      h={{ base: "auto", md: "100vh" }}
       position="relative"
       bgImage="url('/images/bg1.png')"
       bgSize="cover"
@@ -20,13 +20,17 @@ export const PrimeiraParte = () => {
       px="10"
     >
       <Flex
-        maxW="500px"
+        maxW={{ base: "stretch", md: "500px" }}
         flexDirection="column"
         alignItems="center"
         gap={10}
         color="white"
-        marginLeft={20}
         mb="5rem"
+        marginLeft={{ base: "0", md: 20 }}
+        marginTop={{ base: "5rem", md: 0 }}
+        position={{ base: "absolute", md: "unset" }}
+        p={{ base: "20px", md: "0" }}
+        zIndex={{ base: "2", md: "0" }}
       >
         <Box>
           <Text fontSize={22} fontWeight={500}>
@@ -51,9 +55,9 @@ export const PrimeiraParte = () => {
           <br />
         </Box>
         <Box>
-          <ButtomStart text={'Começar agora'}/>
+          <ButtomStart text={"Começar agora"} />
         </Box>
-        <Flex gap={10}>
+        <Flex gap={10} justifyContent={{ base: "center", md: "normal" }} flexWrap={{ base: "wrap", md: "unset" }}>
           <Flex alignItems="center" gap={2}>
             <HiShieldCheck size={50} />
             <Box>
@@ -85,11 +89,11 @@ export const PrimeiraParte = () => {
       </Flex>
 
       {/* Conteúdo da direita (imagem da pessoa) */}
-      <Flex position="relative" justifyContent="center" mr={100} mt={16}>
+      <Flex position="relative" justifyContent="center" mr={{ base: 0, md: 16 }} mt={{ base: 0, md: 16 }}>
         <Img
           src="/images/victoria.png"
           h={720}
-          opacity={0.4}
+          opacity={{ base: '0.1', md: "0.4" }}
           position="absolute"
           left="-160px"
         />
@@ -97,13 +101,14 @@ export const PrimeiraParte = () => {
           src="/images/victoria.png"
           h={760}
           position="relative"
-          zIndex={1}
-          bottom={29}
+          zIndex={{ base: "1", md: "2" }}
+          opacity={{ base: '0.2', md: "1" }}
+          bottom={45}
         />
         <Img
           src="/images/victoria.png"
           h={720}
-          opacity={0.4}
+          opacity={{ base: '0.1', md: "0.4" }}
           position="absolute"
           right="-160px"
         />
@@ -113,7 +118,7 @@ export const PrimeiraParte = () => {
         bottom="0"
         left="0"
         w="100%"
-        h="120px"
+        h="100px"
         bgGradient="linear(to-b, rgba(0,0,0,0), rgba(0,0,0,0.85), #000000)"
         pointerEvents="none"
         zIndex={2}

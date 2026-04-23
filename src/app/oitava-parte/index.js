@@ -1,4 +1,4 @@
-import { Box, Flex, IconButton, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, IconButton, Image, Text, useBreakpointValue } from "@chakra-ui/react";
 import { useState } from "react";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 
@@ -18,7 +18,10 @@ const imagens = [
 export const OitavaParte = () => {
   const [index, setIndex] = useState(0);
 
-  const visibleItems = 4; // 👈 controla quantos aparecem
+  const visibleItems = useBreakpointValue({
+    base: 1,
+    md: 4,
+  }); // 👈 controla quantos aparecem
 
   const next = () => {
     if (index < imagens.length - visibleItems) {
@@ -34,7 +37,7 @@ export const OitavaParte = () => {
   return (
     <Box
       w="100%"
-      bgImage="url('/images/bg8.png')"
+      bgImage="url('/images/bg8.1.png')"
       bgSize="cover"
       bgPosition="center"
       bgRepeat="no-repeat"
@@ -44,7 +47,7 @@ export const OitavaParte = () => {
       px="10"
       position="relative"
     >
-      <Box
+      {/* <Box
         position="absolute"
         top="0"
         left="0"
@@ -53,7 +56,7 @@ export const OitavaParte = () => {
         bgGradient="linear(to-t, rgba(0,0,0,0), rgba(0,0,0,0.85), #000000)"
         pointerEvents="none"
         zIndex={2}
-      />
+      /> */}
       <Box margin="100px auto">
         <Text
           textAlign="center"
@@ -104,18 +107,13 @@ export const OitavaParte = () => {
                 display="flex"
                 justifyContent="center"
               >
-                <Image
-                  src={img}
-                  w="280px"
-                  h="400px"
-                  borderRadius="20px"
-                />
+                <Image src={img} w="280px" h="400px" borderRadius="20px" />
               </Box>
             ))}
           </Flex>
         </Box>
       </Box>
-      <Box
+      {/* <Box
         position="absolute"
         bottom="0"
         left="0"
@@ -124,7 +122,7 @@ export const OitavaParte = () => {
         bgGradient="linear(to-b, rgba(0,0,0,0), rgba(0,0,0,0.85), #000000)"
         pointerEvents="none"
         zIndex={2}
-      />
+      /> */}
     </Box>
   );
 };

@@ -15,7 +15,7 @@ export const SetimaParte = () => {
       px="10"
       position="relative"
     >
-      <Box
+      {/* <Box
         position="absolute"
         top="0"
         left="0"
@@ -24,9 +24,9 @@ export const SetimaParte = () => {
         bgGradient="linear(to-t, rgba(0,0,0,0), rgba(0,0,0,0.85), #000000)"
         pointerEvents="none"
         zIndex={2}
-      />
+      /> */}
       <FAQ />
-      <Box
+      {/* <Box
         position="absolute"
         bottom="0"
         left="0"
@@ -35,7 +35,7 @@ export const SetimaParte = () => {
         bgGradient="linear(to-b, rgba(0,0,0,0), rgba(0,0,0,0.85), #000000)"
         pointerEvents="none"
         zIndex={2}
-      />
+      /> */}
     </Box>
   );
 };
@@ -62,7 +62,7 @@ const FAQ = () => {
   return (
     <Box
       margin="50px auto"
-      maxW="60%"
+      maxW={{ base: "100%", md: "60%" }}
       ref={ref}
       opacity={isVisible ? 1 : 0}
       transform={isVisible ? "translateY(0)" : "translateY(40px)"}

@@ -17,7 +17,7 @@ export const SextaParte = () => {
       px="10"
       position="relative"
     >
-      <Box
+      {/* <Box
         position="absolute"
         top="0"
         left="0"
@@ -26,28 +26,44 @@ export const SextaParte = () => {
         bgGradient="linear(to-t, rgba(0,0,0,0), rgba(0,0,0,0.85), #000000)"
         pointerEvents="none"
         zIndex={2}
-      />
-      <Flex direction="column" align="center" gap={10} margin="80px auto">
-        <Flex gap={10} justifyContent="center" alignItems="end">
-          <Box marginLeft="100px">
+      /> */}
+      <Flex
+        direction="column"
+        align={{ base: "start", md: "center" }}
+        gap={10}
+        margin="80px auto"
+      >
+        <Flex
+          gap={10}
+          justifyContent="center"
+          alignItems="end"
+          width={{ base: "80%", md: "none" }}
+        >
+          <Box
+            marginLeft={{ base: "0", md: "150px" }}
+            position={{ base: "absolute", md: "unset" }}
+            top="20rem"
+            right="-200"
+            opacity={{ base: "0.3", md: "1" }}
+          >
             <Image
               src="/images/victoria-fundo-preto.png" // troca aqui
               alt="Vitória"
-              w={400}
-              h={500}
+              w={{ base: "auto", md: 450 }}
+              h={{ base: "auto", md: 550 }}
             />
           </Box>
-          <Box width="50%">
+          <Box width={{ base: "none", md: "50%" }} position={{ base: "relative", md: "unset" }}>
             <Text
               fontSize={{ base: "2xl", md: "3xl" }}
               fontWeight="bold"
               color="yellow.400"
               mb={4}
             >
-              Prazer, eu sou a Vitória
+              Prazer, eu sou a Victória
             </Text>
 
-            <Stack spacing={3} color="#fff">
+            <Stack spacing={3} color="#fff" fontSize={18}>
               <Text>
                 Há mais de 6 anos empreendendo no mercado digital, já tive a
                 oportunidade de colaborar com mais de 200 empresas de diferentes
@@ -97,7 +113,7 @@ export const SextaParte = () => {
           </Box>
         </Flex>
         <Box w="65%">
-          <Stack spacing={3} color="#fff">
+          <Stack spacing={3} color="#fff" fontSize={18}>
             <Text>
               Cada empresa tem uma história, um momento e um objetivo diferente.
               Por isso, cada estratégia é construída de forma personalizada,
@@ -112,7 +128,13 @@ export const SextaParte = () => {
             </Text>
           </Stack>
         </Box>
-        <Flex gap={10} marginBottom="3rem" color="#fff">
+        <Flex
+          gap={10}
+          marginBottom="3rem"
+          color="#fff"
+          justifyContent={{ base: "center", md: "normal" }}
+          flexWrap={{ base: "wrap", md: "unset" }}
+        >
           <Flex alignItems="center" gap={2}>
             <HiShieldCheck size={50} />
             <Box>
@@ -142,7 +164,7 @@ export const SextaParte = () => {
           </Flex>
         </Flex>
       </Flex>
-      <Box
+      {/* <Box
         position="absolute"
         bottom="0"
         left="0"
@@ -151,7 +173,7 @@ export const SextaParte = () => {
         bgGradient="linear(to-b, rgba(0,0,0,0), rgba(0,0,0,0.85), #000000)"
         pointerEvents="none"
         zIndex={2}
-      />
+      /> */}
     </Box>
   );
 };

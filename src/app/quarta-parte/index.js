@@ -12,7 +12,10 @@ export const QuartaParte = () => {
         p={8}
         width="50%"
       >
-        <MdOutlineCreditScore size={52} />
+        <Box display={{ base: "none", md: "block" }}>
+          <MdOutlineCreditScore size={52} />
+        </Box>
+
         <Box>
           <Text as="h3" fontWeight="bold" fontSize={19}>
             Pagamento seguro
@@ -24,7 +27,10 @@ export const QuartaParte = () => {
         </Box>
       </Flex>
       <Flex gap={3} alignItems="center" p={8} width="50%">
-        <IoMdCheckboxOutline size={52} />
+        <Box display={{ base: "none", md: "block" }}>
+          <IoMdCheckboxOutline size={52} />
+        </Box>
+
         <Box>
           <Text as="h3" fontWeight="bold" fontSize={19}>
             Serviços personalizados

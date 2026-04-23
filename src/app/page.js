@@ -11,7 +11,7 @@ import { OitavaParte } from "./oitava-parte";
 
 export default function Home() {
   return (
-    <main>
+    <main style={{ background: "#000" }}>
       <PrimeiraParte />
       <SegundaParte />
       <TerceiraParte />

@@ -19,7 +19,7 @@ export const QuintaParte = () => {
       px="10"
       position="relative"
     >
-      <Box
+      {/* <Box
         position="absolute"
         top="0"
         left="0"
@@ -28,8 +28,8 @@ export const QuintaParte = () => {
         bgGradient="linear(to-t, rgba(0,0,0,0), rgba(0,0,0,0.85), #000000)"
         pointerEvents="none"
         zIndex={2}
-      />
-      <Flex gap={6} margin="4rem 0 5rem 0" justifyContent="center">
+      /> */}
+      <Flex gap={6} margin="4rem 0 5rem 0" justifyContent="center" flexDirection={{ base: "column", md: "row" }}>
         <MotionBox
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -38,7 +38,7 @@ export const QuintaParte = () => {
         >
           <Image src="/images/computer.png" w={520} />
         </MotionBox>
-        <Box width="40%" margin="auto 20px">
+        <Box width={{ base: "auto", md: "40%" }} margin="auto 20px">
           <Box
             ref={ref}
             border="2px solid #ebdcc4"
@@ -79,7 +79,7 @@ export const QuintaParte = () => {
           </Box>
         </Box>
       </Flex>
-      <Box
+      {/* <Box
         position="absolute"
         bottom="0"
         left="0"
@@ -88,7 +88,7 @@ export const QuintaParte = () => {
         bgGradient="linear(to-b, rgba(0,0,0,0), rgba(0,0,0,0.85), #000000)"
         pointerEvents="none"
         zIndex={2}
-      />
+      /> */}
     </Box>
   );
 };

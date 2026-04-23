@@ -11,13 +11,25 @@ import {
 
 export const Footer = () => {
   return (
-    <>
-      <Flex bg="#000" color="#fff" justifyContent="space-around" h={100}>
+    <footer>
+      <Flex
+        bg="#000"
+        color="#fff"
+        justifyContent="space-around"
+        flexDirection={{ base: "column", md: "row" }}
+        gap={{ base: "20px", md: "0" }}
+        h={{ base: "auto", md: 100 }}
+        p={{ base: "40px", md: "0" }}
+        pt={5}
+      >
         <Box>
           <Text>viihbf_ © 2021 | Todos os direitos reservados</Text>
-          <Text>Desenvolvido por MMV Soluções Web <FaReact /></Text>
+          <Flex alignItems="center" gap={2}>
+            <Text>Desenvolvido por MMV Soluções Web </Text>
+            <FaReact />
+          </Flex>
         </Box>
-        <Box>
+        <Box display={{ base: "flex", md: "block" }} flexDirection="column" alignItems="flex-start">
           <Text>Nos siga nas nossas redes sociais</Text>
           <Flex gap={3} justifyContent="center">
             <Link
@@ -26,10 +38,7 @@ export const Footer = () => {
             >
               <FaLinkedin size={32} />
             </Link>
-            <Link
-              href="https://instagram.com/viihbranding/"
-              target="_blank"
-            >
+            <Link href="https://instagram.com/viihbranding/" target="_blank">
               <FaInstagram size={32} />
             </Link>
             <Link
@@ -38,21 +47,15 @@ export const Footer = () => {
             >
               <FaFacebook size={32} />
             </Link>
-            <Link
-              href="https://behance.net/victoriabarbosaa"
-              target="_blank"
-            >
+            <Link href="https://behance.net/victoriabarbosaa" target="_blank">
               <FaBehance size={32} />
             </Link>
-            <Link
-              href="https://youtube.com/@victoriabarbosa.f"
-              target="_blank"
-            >
+            <Link href="https://youtube.com/@victoriabarbosa.f" target="_blank">
               <FaYoutube size={32} />
             </Link>
           </Flex>
         </Box>
       </Flex>
-    </>
+    </footer>
   );
 };
